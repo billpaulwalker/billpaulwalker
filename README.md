@@ -1,3 +1,5 @@
+<img src="github-banner.png" width="100%" />
+
 # 👋 Hi, I'm Bill Walker
 
 **Senior Data Engineer | Databricks • PySpark • dbt • SQL**  
