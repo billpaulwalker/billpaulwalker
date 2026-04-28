@@ -31,7 +31,7 @@ Production-style lakehouse pipeline using:
 - Structured Streaming
 - Delta Lake
 
-👉 [View Project](https://github.com/YOUR_USERNAME/databricks-realtime-lakehouse-pipeline)
+👉 [View Project](https://github.com/billpaulwalker/databricks-realtime-lakehouse-pipeline)
 
 ---
 
@@ -41,7 +41,7 @@ Modern transformation framework with:
 - Data quality testing
 - CI/CD integration
 
-👉 [View Project](https://github.com/YOUR_USERNAME/dbt-lakehouse-analytics-platform)
+👉 [View Project](https://github.com/billpaulwalker/dbt-lakehouse-analytics-platform)
 
 ---
 
