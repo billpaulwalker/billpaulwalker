@@ -41,7 +41,7 @@ Modern transformation framework with:
 - Data quality testing
 - CI/CD integration
 
-👉 [View Project](https://github.com/billpaulwalker/dbt-lakehouse-analytics-platform)
+👉 [View Project](https://github.com/billpaulwalker/commercial-real-estate-dbt-platform)
 
 ---
 
