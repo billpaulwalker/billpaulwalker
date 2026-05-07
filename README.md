@@ -9,7 +9,7 @@ I’m a Senior Data Engineer with 18+ years of experience evolving from SQL-base
 
 - 🔧 Started with SQL Server, ETL, and enterprise data systems  
 - ☁️ Transitioned into AWS & Azure cloud environments  
-- ⚡ Now focused on Databricks, PySpark, dbt, and lakehouse architecture  
+- ⚡ Now focused on Fabric, Databricks, PySpark, dbt, and lakehouse architecture  
 
 I specialize in:
 - Designing scalable data pipelines (batch & streaming)
