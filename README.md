@@ -5,39 +5,53 @@
 
 ## 🚀 About Me
 
-I’m a Senior Data Engineer with 18+ years of experience evolving from SQL-based systems into modern cloud and distributed data platforms.
+Senior Data Engineer specializing in modern cloud data platforms, lakehouse architecture, and scalable data pipelines.
 
-- 🔧 Started with SQL Server, ETL, and enterprise data systems  
-- ☁️ Transitioned into AWS & Azure cloud environments  
-- ⚡ Now focused on Fabric, Databricks, PySpark, dbt, and lakehouse architecture  
+- 18+ years building data systems from SQL Server → cloud → distributed platforms
+- Strong focus on Azure, Databricks, PySpark, dbt, and Fabric
+- Experienced in modernizing legacy systems into cloud-native architectures
 
-I specialize in:
-- Designing scalable data pipelines (batch & streaming)
-- Modernizing legacy systems into cloud-native platforms
-- Building analytics-ready data models
-- Improving performance, reliability, and data quality
+### Core Strengths
+- Scalable data pipeline design (batch & streaming)
+- Lakehouse architecture (Bronze / Silver / Gold)
+- Data modeling for analytics and BI
+- Performance optimization and cost efficiency
+- Data quality, validation, and observability
 
 ---
 
 ## 🧱 Featured Projects
 
 ### 🔹 Real-Time Data Pipeline (Databricks + PySpark)
-Production-style lakehouse pipeline using:
+Streaming-first lakehouse pipeline:
 - Medallion architecture (bronze → silver → gold)
-- Structured Streaming
-- Delta Lake
+- Structured Streaming + Delta Lake
+- Event-driven ingestion patterns
 
 👉 [View Project](https://github.com/billpaulwalker/databricks-realtime-lakehouse-pipeline)
 
 ---
 
 ### 🔹 Analytics Engineering Platform (dbt)
-Modern transformation framework with:
+Analytics layer + transformation framework
 - Star schema modeling
 - Data quality testing
 - CI/CD integration
 
 👉 [View Project](https://github.com/billpaulwalker/commercial-real-estate-dbt-platform)
+
+---
+
+### 🔹 Azure Lakehouse Modernization (ADF + ADLS + Synapse → Fabric)
+Enterprise Azure → Fabric migration simulation
+
+- Parameterized ADF ingestion pipelines (API + file patterns)
+- Medallion architecture with PySpark transformations
+- Data quality validation + quarantine handling
+- Synapse SQL serving layer for analytics
+- Fabric-ready architecture and migration strategy
+
+👉 [View Project](https://github.com/billpaulwalker/azure-fabric-lakehouse-modernization)
 
 ---
 
@@ -51,23 +65,15 @@ Modern transformation framework with:
 - Delta Lake
 
 **Cloud**
-- Azure (ADF, Azure SQL)
+- Azure (ADF, ADLS Gen2, Azure SQL, Synapse, Fabric)
 - AWS (S3, Redshift)
 
 **Engineering Practices**
-- CI/CD
+- CI/CD (GitHub Actions)
 - Git
 - Data Modeling
 - Data Architecture
-
----
-
-## 📈 What I'm Working On
-
-- Building production-grade Databricks pipelines
-- Deepening PySpark performance optimization skills
-- Expanding dbt + CI/CD workflows
-- Creating reusable data engineering templates
+- Data Quality & Observability
 
 ---
 
