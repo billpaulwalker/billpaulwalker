@@ -64,23 +64,23 @@ I focus on building data platforms that are not just functional, but production-
 
 ## 🧱 Featured Projects
 
-### 🔹 Microsoft Fabric Lakehouse Project
+### 🔹 Microsoft Fabric Modern Data Platform
 
-End-to-end Microsoft Fabric lakehouse portfolio project showing how legacy data movement patterns can be redesigned into a modern medallion architecture.
+Flagship Commercial Real Estate data engineering project demonstrating how legacy SQL, API, and file-based pipelines can be modernized into a governed Microsoft Fabric lakehouse architecture.
 
 **Key patterns demonstrated:**
 
-- Fabric Lakehouse and OneLake concepts
-- Bronze / Silver / Gold architecture
-- Python/PySpark notebook patterns
-- Delta table design
-- data validation checks
-- pipeline logging concepts
-- watermark and incremental loading patterns
-- Power BI-ready Gold dimensional modeling
-- Dev/Test/Prod deployment checklist
+- Multi-source SQL-style, REST API, and file ingestion
+- Bronze / Silver / Gold medallion architecture
+- Python, pandas, PySpark, Delta Lake, and OneLake patterns
+- Configuration-driven validation, quarantine, and deduplication
+- Power BI-ready star schema and Direct Lake semantic model
+- Governed DAX measures and semantic-model validation
+- Dependency-aware orchestration, audit logging, and monitoring
+- Automated testing with pytest and GitHub Actions
+- Dev/Test/Prod release gates, packaging, and rollback planning
 
-👉 [View Project](https://github.com/billpaulwalker/microsoft-fabric-lakehouse-project)
+👉 [View Project](https://github.com/billpaulwalker/fabric-modern-data-platform)
 
 ---
 
