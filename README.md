@@ -84,24 +84,28 @@ Flagship Commercial Real Estate data engineering project demonstrating how legac
 
 ---
 
-### 🔹 Azure Lakehouse Modernization  
-**ADF + ADLS + Synapse → Fabric**
+### 🔹 Production-Style REST API Ingestion Pipeline  
+**Python + OpenWeather API + Lakehouse-Ready Output**
 
-Enterprise-style Azure modernization simulation showing how traditional Azure data platform patterns can evolve toward Microsoft Fabric.
+Python-based REST API ingestion project demonstrating how external API data can be ingested, preserved, flattened, logged, tested, and prepared for a modern lakehouse platform.
 
 **Key patterns demonstrated:**
 
-- parameterized Azure Data Factory ingestion
-- API and file ingestion patterns
-- ADLS Gen2 landing zones
-- PySpark transformations
-- medallion architecture
-- data quality validation
-- quarantine handling
-- Synapse SQL serving layer
-- Fabric-ready migration strategy
+- Python `requests` API client
+- environment-variable authentication
+- query parameter construction
+- status code handling
+- retry and rate-limit handling
+- pagination framework patterns
+- Bronze-style raw JSON landing
+- JSON flattening into tabular output
+- watermark tracking for incremental processing
+- run metadata logging
+- unit testing with mocked API responses
+- GitHub Actions validation
+- Delta-ready CSV / Parquet output for Fabric or Databricks
 
-👉 [View Project](https://github.com/billpaulwalker/azure-fabric-lakehouse-modernization)
+👉 [View Project](https://github.com/billpaulwalker/production-rest-api-ingestion-pipeline)
 
 ---
 
