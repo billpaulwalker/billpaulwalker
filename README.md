@@ -17,11 +17,11 @@ My current focus is **legacy-to-lakehouse modernization**: helping teams move fr
 I specialize in:
 
 - Microsoft Fabric lakehouse architecture
-- Azure Data Factory and metadata-driven ingestion
+- Azure Data Factory and metadata-driven ingestion (control tables, parameterized sources and targets)
 - Python, PySpark, Spark SQL, and Delta Lake
-- Bronze / Silver / Gold medallion architecture
+- Bronze / Silver / Gold medallion architecture, with raw data preserved and every transformation traceable
 - Incremental loading, MERGE/upsert logic, and watermark patterns
-- Data validation, logging, monitoring, and production support
+- Data validation, run logging, monitoring, rerun-safe design, and production support
 - Power BI-ready Gold layers, semantic models, and analytics data products
 - Git, CI/CD, Dev/Test/Prod promotion, and deployment discipline
 
@@ -84,28 +84,24 @@ Flagship Commercial Real Estate data engineering project demonstrating how legac
 
 ---
 
-### 🔹 Production-Style REST API Ingestion Pipeline  
-**Python + OpenWeather API + Lakehouse-Ready Output**
+### 🔹 REST API Data Ingestion → Microsoft Fabric Lakehouse  
+**Python + GitHub REST API + Delta Lake + OneLake**
 
-Python-based REST API ingestion project demonstrating how external API data can be ingested, preserved, flattened, logged, tested, and prepared for a modern lakehouse platform.
+End-to-end incremental ingestion pipeline that loads GitHub issues and pull requests into Delta tables in a Microsoft Fabric Lakehouse. The same code runs locally, in CI, or in a Fabric notebook.
 
 **Key patterns demonstrated:**
 
-- Python `requests` API client
-- environment-variable authentication
-- query parameter construction
-- status code handling
-- retry and rate-limit handling
-- pagination framework patterns
-- Bronze-style raw JSON landing
-- JSON flattening into tabular output
-- watermark tracking for incremental processing
-- run metadata logging
-- unit testing with mocked API responses
-- GitHub Actions validation
-- Delta-ready CSV / Parquet output for Fabric or Databricks
+- Bearer-token auth from environment / Azure Key Vault, with no committed secrets
+- `Link`-header pagination with a runaway-loop guardrail
+- Server-side incremental loads (`since=`) with a separate watermark per source, stored in Delta
+- Retries with exponential backoff, `Retry-After` support, and proactive rate-limit throttling
+- Bronze raw-page append → Silver `MERGE` on primary key, so reruns never duplicate data
+- Watermark committed only after a successful load, so an interrupted run recovers by simply rerunning
+- Run log table plus an Operations & Troubleshooting runbook (401s, 429s, interrupted runs, duplicates)
+- Fabric Python notebook, Data pipeline orchestration, and SQL endpoint health checks
+- 37 pytest tests against real Delta tables; GitHub Actions on Ubuntu and Windows
 
-👉 [View Project](https://github.com/billpaulwalker/production-rest-api-ingestion-pipeline)
+👉 [View Project](https://github.com/billpaulwalker/rest-api-data-ingestion)
 
 ---
 
@@ -150,89 +146,13 @@ Analytics engineering project focused on clean transformation design, testing, a
 
 ## ⚙️ Core Tech Stack
 
-### Microsoft & Azure Data Platform
+**Microsoft & Azure:** Microsoft Fabric (Lakehouse, Warehouse, OneLake) · Azure Data Factory · Azure Synapse Analytics · Azure SQL · ADLS Gen2 · Azure Monitor · Power BI · Direct Lake
 
-- Microsoft Fabric
-- Fabric Lakehouse
-- OneLake
-- Fabric Warehouse
-- Azure Data Factory
-- Azure Synapse Analytics
-- Azure SQL
-- ADLS Gen2
-- Azure Monitor
-- Power BI
-- Direct Lake concepts
+**Data Engineering:** Python · PySpark · Spark SQL · SQL / T-SQL · pandas · Delta Lake · Databricks · dbt · REST APIs / JSON
 
-### Data Engineering & Lakehouse
+**Production Engineering:** Git · GitHub Actions · CI/CD · pytest · Dev/Test/Prod deployment · logging, monitoring & alerting · data quality checks
 
-- Python
-- PySpark
-- Spark SQL
-- SQL / T-SQL
-- pandas
-- Delta Lake
-- Databricks
-- Medallion architecture
-- Bronze / Silver / Gold design
-- REST API ingestion
-- JSON processing
-- incremental loading
-- MERGE/upsert patterns
-- watermark tracking
-
-### Production Engineering
-
-- metadata-driven pipelines
-- pipeline logging
-- row count validation
-- data quality checks
-- error handling
-- retry patterns
-- monitoring and alerting
-- Dev/Test/Prod deployment
-- Git
-- GitHub Actions
-- Azure DevOps concepts
-- CI/CD
-
-### Data Modeling & BI
-
-- dimensional modeling
-- star schema design
-- fact and dimension tables
-- semantic model readiness
-- Power BI-ready Gold layers
-- reporting data marts
-- business rule documentation
-
----
-
-## 🏗️ Signature Patterns
-
-### Metadata-Driven Ingestion
-
-I design reusable ingestion patterns using control tables, parameters, dynamic source and target configuration, logging, and validation.
-
-### Medallion Lakehouse Architecture
-
-I organize data into Bronze, Silver, and Gold layers so raw data is preserved, transformations are traceable, and reporting tables are trusted.
-
-### Production-Ready Pipelines
-
-I focus on the operational details that make pipelines reliable:
-
-- run logging
-- row counts
-- duration tracking
-- failure handling
-- rerun-safe design
-- validation gates
-- deployment checklists
-
-### Power BI-Ready Data Products
-
-I build curated Gold tables and semantic model-ready structures so business users can trust the numbers in Power BI.
+**Data Modeling & BI:** dimensional modeling · star schema design · semantic models · reporting data marts
 
 ---
 
