@@ -84,24 +84,25 @@ Flagship Commercial Real Estate data engineering project demonstrating how legac
 
 ---
 
-### 🔹 REST API Data Ingestion → Microsoft Fabric Lakehouse  
-**Python + GitHub REST API + Delta Lake + OneLake**
+### 🔹 Python REST API Ingestion Framework → Microsoft Fabric Lakehouse  
+**Python + GitHub REST API + PySpark + Delta Lake + OneLake + Fabric Data Pipelines**
 
-End-to-end incremental ingestion pipeline that loads GitHub issues and pull requests into Delta tables in a Microsoft Fabric Lakehouse. The same code runs locally, in CI, or in a Fabric notebook.
+Reusable, fault-tolerant ingestion framework that incrementally loads GitHub issues through Bronze and Silver layers. It runs locally (raw JSON, Parquet, SQLite run tracking) and in Microsoft Fabric (OneLake, Delta Lake MERGE, notebook orchestrated by a Data pipeline). Verified in a live Fabric workspace: 2,117 Silver rows, one per issue, no duplicates.
 
 **Key patterns demonstrated:**
 
-- Bearer-token auth from environment / Azure Key Vault, with no committed secrets
-- `Link`-header pagination with a runaway-loop guardrail
-- Server-side incremental loads (`since=`) with a separate watermark per source, stored in Delta
-- Retries with exponential backoff, `Retry-After` support, and proactive rate-limit throttling
-- Bronze raw-page append → Silver `MERGE` on primary key, so reruns never duplicate data
-- Watermark committed only after a successful load, so an interrupted run recovers by simply rerunning
-- Run log table plus an Operations & Troubleshooting runbook (401s, 429s, interrupted runs, duplicates)
-- Fabric Python notebook, Data pipeline orchestration, and SQL endpoint health checks
-- 37 pytest tests against real Delta tables; GitHub Actions on Ubuntu and Windows
+- Token auth from environment variables or Azure Key Vault, with no committed secrets
+- `Link`-header pagination with a max-page guardrail
+- Timestamp-based incremental extraction (`since=`) with a watermark overlap window
+- Bounded retries with exponential backoff, `Retry-After` support, and rate-limit-aware handling
+- Raw JSON Bronze landing → validation with rejected-record quarantine → Silver Delta `MERGE` on a stable key
+- Documented same-timestamp upsert policy, so reruns and replays never duplicate data or roll Silver back
+- Checkpoint advanced only after a verified Silver commit; recover mode reprocesses Bronze from failed runs
+- Run history with final status and failing stage for every execution (SQLite locally, Delta control tables in Fabric)
+- Fabric notebook + Data pipeline, an operations runbook, design decisions, and screenshot evidence
+- 63 pytest tests, including simulated failure and recovery scenarios, run by GitHub Actions on Ubuntu and Windows
 
-👉 [View Project](https://github.com/billpaulwalker/rest-api-data-ingestion)
+👉 [View Project](https://github.com/billpaulwalker/python-rest-api-fabric-ingestion)
 
 ---
 
